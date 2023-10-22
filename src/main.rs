@@ -1,6 +1,5 @@
 fn main() {
-    let message =
-        "ggjeiogjowjejgoewjgiwjgiowgrhiowjvsgjewiogjeijcgewgioewoiw344kjgeowjcjpjgwgewpgjiogjoej";
+    let message = "msg";
     let msg = encode_message(message);
 
     let msg_by_4bytes = create_4bytes_chunks(msg);
@@ -39,9 +38,8 @@ fn main() {
         hash[7] = h.wrapping_add(hash[7]);
     }
 
-    let mut result = String::new();
-    result = hash.iter().map(|x| format!("{:x}", x)).collect::<String>();
-    return result;
+    let result = hash.iter().map(|x| format!("{:x}", x)).collect::<String>();
+    print!("{}", result);
 }
 
 const K: [u32; 64] = [
